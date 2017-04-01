@@ -504,6 +504,12 @@ int main(int argc, char **argv)
         lindstrom_shape_weight+=lindstrom_shape_weight_step;
     }while( use_lindstrom_shape_weight() && lindstrom_shape_weight<=lindstrom_shape_weight_to);
 
+    for(int i=0;i<child_procceses.size();i++)
+    {
+        status=0;
+        waitpid(child_procceses[i],&status,0);
+        
 
+    }
     return 0;
 }
