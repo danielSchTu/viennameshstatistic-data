@@ -323,17 +323,19 @@ int main(int argc, char **argv)
                         std::cout << "inside the waiting loop\n";
                         for(int i=0;i<child_procceses.size();i++)
                         {
+                            status=0;
                             waitpid(child_procceses[i],&status, WNOHANG);
                             #if Debug == true
-                                std::cout << "status of the child processes: " << status << "\n";
+                                std::cout << "status of the child " << child_procceses[i] << " processes: " << status << "\n";
                             #endif
-                            if(0!=status)
+                            if(status!=0)
                             {
                                 child_procceses.erase(child_procceses.begin() + i);
+                                
                                 add_new_process=true;   
                             }
                         }
-                        if(add_new_process==false) sleep(30);
+                        if(add_new_process==false) sleep(10);
                     }
                     tmp=fork();
                     if(tmp<0)
