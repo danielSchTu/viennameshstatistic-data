@@ -141,8 +141,6 @@ int main(int argc, char **argv)
     std::vector<pid_t> child_procceses      ;
     bool add_new_process                = true;
     int status                          = 0;
-    long counter                        = 0;
-
 
 /*debug text*/
 #if Debug == true
@@ -437,7 +435,12 @@ int main(int argc, char **argv)
                             tmp_str="-output_file";
                             strings.push_back(tmp_str);
 
-                            tmp_str=output_file + boost::lexical_cast<std::string>(counter);
+                            tmp_str=output_file;
+                            if(use_feature_angle())             tmp_str+="_feature_angle_"      + boost::lexical_cast<std::string>(feature_angle);
+                            if(use_lindstrom_volume_weight())   tmp_str+="_volume_weight_"      + boost::lexical_cast<std::string>(lindstrom_volume_weight);
+                            if(use_lindstrom_boundary_weight()) tmp_str+="_boundary_weight_"    + boost::lexical_cast<std::string>(lindstrom_boundary_weight);
+                            if(use_lindstrom_shape_weight())    tmp_str+="_shape_weight_"       + boost::lexical_cast<std::string>(lindstrom_shape_weight);
+
                             strings.push_back(tmp_str);
                         }
 
@@ -485,7 +488,6 @@ int main(int argc, char **argv)
                     if(tmp>0)
                     {
                         child_procceses.push_back(tmp);
-                        counter++;
                         std::cout << "added new child process\n";
                         if(child_procceses.size()>=process_count) add_new_process=false;
                     }
