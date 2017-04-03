@@ -14,17 +14,17 @@
 input parameters:\n\
 \t -input_mesh, -im                     [mesh location              : default ./statistic/exp_conf.vtu ]\n\
 \n\
-\t -volume_weight_from, -vwf            [volume weight factor from  : default 0.1 ]\n\
-\t -volume_weight_to, -vwt              [volume weight factor to    : default 0.1 ]\n\
-\t -volume_weight_step, -vws            [volume weight factor step  : default 0.1 ]\n\
+\t -volume_weight_from, -vwf            [volume weight factor from  : default not used ]\n\
+\t -volume_weight_to, -vwt              [volume weight factor to    : default not used ]\n\
+\t -volume_weight_step, -vws            [volume weight factor step  : default not used ]\n\
 \n\
-\t -boundary_weight_from, -bwf          [boundary weight factor from: default 0.5 ]\n\
-\t -boundary_weight_to, -bwt            [boundary weight factor to  : default 0.5 ]\n\
-\t -boundary_weight_step, -bws          [boundary weight factor step: default 0.5 ]\n\
+\t -boundary_weight_from, -bwf          [boundary weight factor from: default not used ]\n\
+\t -boundary_weight_to, -bwt            [boundary weight factor to  : default not used ]\n\
+\t -boundary_weight_step, -bws          [boundary weight factor step: default not used ]\n\
 \n\
-\t -shape_weight_from, -swf             [shape weight factor from   : default 0.4 ]\n\
-\t -shape_weight_to, -swt               [shape weight factor to     : default 0.4 ]\n\
-\t -shape_weight_step, -sws             [shape weight factor step   : default 0.4 ]\n\
+\t -shape_weight_from, -swf             [shape weight factor from   : default not used ]\n\
+\t -shape_weight_to, -swt               [shape weight factor to     : default not used ]\n\
+\t -shape_weight_step, -sws             [shape weight factor step   : default not used ]\n\
 \n\
 \t -feature_angle_from, -faf            [sets the feature angle from: default not used ]\n\
 \t -feature_angle_to, -fat              [sets the feature angle to  : default not used ]\n\
@@ -43,6 +43,7 @@ input parameters:\n\
 \n\
 \t -ratio_step, -rstep                  [ratio step length ]\n\
 \t -ratio_start, -rstart                [ratio start counter ]\n\
+\t -ratio_stop, -rstop                  [ratio stop counter ]\n\
 \n\
 \t -j                                   [number of simultaneous processes default 4 ]\n\
 \t -help                                if help is one of the arguments nothing is produced\n\
